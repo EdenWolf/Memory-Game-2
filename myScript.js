@@ -2,38 +2,6 @@ var numberOfCards = 12; // must be even
 var cardsOnBoard = numberOfCards;
 var score = 0;
 var theFormSubmit = document.getElementById('submit');
-var num = 0;
-
-function toggleDisplay() {
-    /*
-    var before = document.getElementById('the_before');
-    var game = document.getElementById('the_game');
-    if (num == 0){
-        game.style.display = 'none';
-        before.style.display = 'block';
-        num++;
-    }
-    else {
-        game.style.display = 'block';
-        before.style.display = 'none';
-        num--;
-    }
-    */
-
-
-    var before = document.getElementById('the_before');
-    var game = document.getElementById('the_game');
-    console.log(before.style.display);
-    if (before.style.display == 'block') {
-        game.style.display = 'none';
-        before.style.display = 'block';
-    }
-    else {
-        game.style.display = 'block';
-        before.style.display = 'none';
-    }
-
-}
 
 // create the cards
 function createCards() {
@@ -60,8 +28,6 @@ function flip (e){
     theCard.classList.toggle('is-flipped');
     checkPair();
 }
-
-
 
 // Randomize array in-place using Durstenfeld shuffle algorithm
 function shuffleArray(array) {
@@ -160,60 +126,24 @@ function checkPair() {
     }
 }
 
-theFormSubmit.addEventListener('click', submitAndStart);
+//theFormSubmit.addEventListener('click', submitAndStart);
 var imgArray = [];
-function submitAndStart(){
-    var radioName = document.getElementsByName('name');
-    
-    if (radioName[0].checked) {
-        console.log('Vova');
-        toggleDisplay();
-        // create src array
-        
-        imgArray[0] = 'images/Vova/img1.jpg'
-        imgArray[1] = 'images/Vova/img2.jpg';
-        imgArray[2] = 'images/Vova/img3.jpg';
-        imgArray[3] = 'images/Vova/img4.jpg';
-        imgArray[4] = 'images/Vova/img5.jpg';
-        imgArray[5] = 'images/Vova/img6.jpg';
-        imgArray[6] = 'images/Vova/img7.jpg';
-        imgArray[7] = 'images/Vova/img8.jpg';
-        imgArray[8] = 'images/Vova/img9.jpg';
-        imgArray[9] = 'images/Vova/img10.jpg';
-        imgArray[10] = 'images/Vova/img11.jpg';
-        imgArray[11] = 'images/Vova/img12.jpg';
-        imgArray[12] = 'images/Vova/img13.jpg';
-        imgArray[13] = 'images/Vova/img14.jpg';
-        imgArray[14] = 'images/Vova/img15.jpg';
-        imgArray[15] = 'images/Vova/img16.jpg';
-        imgArray[16] = 'images/Vova/img17.png';
-        setupBoard();
-    }
-    else if (radioName[1].checked){
-        console.log('Ian')
-    }
-    else if (radioName[2].checked){
-        console.log('Perah')
-    }
-    else if (radioName[3].checked){
-        console.log('Shir')
-    }
-    else if (radioName[4].checked){
-        console.log('Tslil')
-    }
-    else if (radioName[5].checked){
-        console.log('Sweetie')
-    }
-    else if (radioName[6].checked){
-        console.log('Other')
-    }
-    else {
-        alert('Somthing is wrong, please try again');
-    }
+imgArray[0] = 'images/Vova/img1.jpg'
+imgArray[1] = 'images/Vova/img2.jpg';
+imgArray[2] = 'images/Vova/img3.jpg';
+imgArray[3] = 'images/Vova/img4.jpg';
+imgArray[4] = 'images/Vova/img5.jpg';
+imgArray[5] = 'images/Vova/img6.jpg';
+imgArray[6] = 'images/Vova/img7.jpg';
+imgArray[7] = 'images/Vova/img8.jpg';
+imgArray[8] = 'images/Vova/img9.jpg';
+imgArray[9] = 'images/Vova/img10.jpg';
+imgArray[10] = 'images/Vova/img11.jpg';
+imgArray[11] = 'images/Vova/img12.jpg';
+imgArray[12] = 'images/Vova/img13.jpg';
+imgArray[13] = 'images/Vova/img14.jpg';
+imgArray[14] = 'images/Vova/img15.jpg';
+imgArray[15] = 'images/Vova/img16.jpg';
+imgArray[16] = 'images/Vova/img17.png';
 
-    //var name = document.getElementById('enterForm').elements['name'].value;
-    console.log('hey');
-    //console.log(name);
-}
-
-//toggleDisplay();
+setupBoard();
