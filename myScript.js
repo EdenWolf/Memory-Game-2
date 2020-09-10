@@ -59,7 +59,15 @@ function putSrc() {
 }
 
 // setup the board
-function setupBoard() {
+function setupBoard(eventEl) {
+    var nameOfPlayer = eventEl.currentTarget.id;
+    alert (nameOfPlayer);
+    if (nameOfPlayer == 'Vova') {
+        vovaImages();
+    }
+    else {
+        ianImages();
+    }
     document.getElementById('board').style.display = 'flex';
     cardsOnBoard = numberOfCards;
     createCards();
@@ -130,25 +138,55 @@ function checkPair() {
     }
 }
 
+function vovaImages() {
+    imgArray[0] = 'images/Vova/img1.jpg'
+    imgArray[1] = 'images/Vova/img2.jpg';
+    imgArray[2] = 'images/Vova/img3.jpg';
+    imgArray[3] = 'images/Vova/img4.jpg';
+    imgArray[4] = 'images/Vova/img5.jpg';
+    imgArray[5] = 'images/Vova/img6.jpg';
+    imgArray[6] = 'images/Vova/img7.jpg';
+    imgArray[7] = 'images/Vova/img8.jpg';
+    imgArray[8] = 'images/Vova/img9.jpg';
+    imgArray[9] = 'images/Vova/img10.jpg';
+    imgArray[10] = 'images/Vova/img11.jpg';
+    imgArray[11] = 'images/Vova/img12.jpg';
+    imgArray[12] = 'images/Vova/img13.jpg';
+    imgArray[13] = 'images/Vova/img14.jpg';
+    imgArray[14] = 'images/Vova/img15.jpg';
+    imgArray[15] = 'images/Vova/img16.jpg';
+    imgArray[16] = 'images/Vova/img17.png';
+}
+
+function ianImages() {
+    imgArray[0] = 'images/Ian/img1.jpg';
+    imgArray[1] = 'images/Ian/img2.jpg';
+    imgArray[2] = 'images/Ian/img3.jpg';
+    imgArray[3] = 'images/Ian/img4.jpg';
+    imgArray[4] = 'images/Ian/img5.jpg';
+    imgArray[5] = 'images/Ian/img6.jpg';
+    imgArray[6] = 'images/Ian/img7.jpg';
+    imgArray[7] = 'images/Ian/img8.jpg';
+    imgArray[8] = 'images/Ian/img9.jpg';
+    imgArray[9] = 'images/Ian/img10.jpg';
+    imgArray[10] = 'images/Ian/img11.jpg';
+    imgArray[11] = 'images/Ian/img12.jpg';
+    imgArray[12] = 'images/Ian/img13.jpg';
+    imgArray[13] = 'images/Ian/img14.jpg';
+    imgArray[14] = 'images/Ian/img15.jpg';
+    imgArray[15] = 'images/Ian/img16.jpg';
+    imgArray[16] = 'images/Ian/img17.jpg';
+    imgArray[17] = 'images/Ian/img18.jpg';
+    imgArray[18] = 'images/Ian/img19.jpg';
+    imgArray[19] = 'images/Ian/img20.jpg';
+    imgArray[20] = 'images/Ian/img21.jpg';
+    imgArray[21] = 'images/Ian/img22.jpg';
+    imgArray[22] = 'images/Ian/img23.jpg';
+    imgArray[23] = 'images/Ian/img24.jpg';
+}
+
 //theFormSubmit.addEventListener('click', submitAndStart);
 var imgArray = [];
-imgArray[0] = 'images/Vova/img1.jpg'
-imgArray[1] = 'images/Vova/img2.jpg';
-imgArray[2] = 'images/Vova/img3.jpg';
-imgArray[3] = 'images/Vova/img4.jpg';
-imgArray[4] = 'images/Vova/img5.jpg';
-imgArray[5] = 'images/Vova/img6.jpg';
-imgArray[6] = 'images/Vova/img7.jpg';
-imgArray[7] = 'images/Vova/img8.jpg';
-imgArray[8] = 'images/Vova/img9.jpg';
-imgArray[9] = 'images/Vova/img10.jpg';
-imgArray[10] = 'images/Vova/img11.jpg';
-imgArray[11] = 'images/Vova/img12.jpg';
-imgArray[12] = 'images/Vova/img13.jpg';
-imgArray[13] = 'images/Vova/img14.jpg';
-imgArray[14] = 'images/Vova/img15.jpg';
-imgArray[15] = 'images/Vova/img16.jpg';
-imgArray[16] = 'images/Vova/img17.png';
 
 document.getElementById('board').style.display = 'none';
 
