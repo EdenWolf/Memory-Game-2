@@ -68,6 +68,10 @@ function setupBoard(eventEl) {
     else {
         ianImages();
     }
+    setup();
+}
+
+function setup() {
     document.getElementById('board').style.display = 'flex';
     cardsOnBoard = numberOfCards;
     createCards();
@@ -113,7 +117,7 @@ function reset(){
     var lastCard = document.getElementsByClassName('card_pair');
     console.log(lastCard);
     lastCard[0].className = 'card';
-    setupBoard();
+    setup();
 }
 
 // check if it is a pair
