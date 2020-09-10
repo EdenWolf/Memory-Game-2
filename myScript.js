@@ -60,6 +60,7 @@ function putSrc() {
 
 // setup the board
 function setupBoard() {
+    document.getElementById('board').style.display = 'flex';
     cardsOnBoard = numberOfCards;
     createCards();
     listenAndFlip();
@@ -67,6 +68,9 @@ function setupBoard() {
     copyAndDouble();
     shuffleArray(newImgArray);
     putSrc();
+    for (var ind = 0; ind < bottuns.length; ind++){
+        bottuns[ind].style.display = 'none';
+    }
 }
 
 // flip back a pair of cards
@@ -146,4 +150,11 @@ imgArray[14] = 'images/Vova/img15.jpg';
 imgArray[15] = 'images/Vova/img16.jpg';
 imgArray[16] = 'images/Vova/img17.png';
 
-setupBoard();
+document.getElementById('board').style.display = 'none';
+
+var bottuns = document.getElementsByTagName('button');
+for (var ind = 0; ind < bottuns.length; ind++){
+    bottuns[ind].addEventListener( 'click', setupBoard);
+}
+
+//setupBoard();

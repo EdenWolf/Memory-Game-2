@@ -27,6 +27,9 @@ h2 {
 #score {
     font-size: 18px;
 }
+button {
+    clear: both;
+}
 
 #board {
     background-color: #5680ff;
