@@ -114,3 +114,11 @@ button:hover {
     transition-delay: 0.1s;
     transition-duration: 1s;
 }
+
+#footer a {
+    color: white;
+}
+
+#footer a:active {
+    color: white;
+}
