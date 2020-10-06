@@ -61,18 +61,21 @@ function putSrc() {
 // setup the board
 function setupBoard(eventEl) {
     var nameOfPlayer = eventEl.currentTarget.id;
-    alert (nameOfPlayer);
-    if (nameOfPlayer == 'Vova') {
-        vovaImages();
+    if (nameOfPlayer == 'Animal') {
+        animalImages();
     }
     else {
-        ianImages();
+       // ianImages();
+
     }
     setup();
 }
 
 function setup() {
-    document.getElementById('board').style.display = 'flex';
+    var buttonsBox = document.getElementById('buttonsBox');
+    var board = document.getElementById('board');
+
+    //buttonsBox.style.display = 'none';
     cardsOnBoard = numberOfCards;
     createCards();
     listenAndFlip();
@@ -80,9 +83,37 @@ function setup() {
     copyAndDouble();
     shuffleArray(newImgArray);
     putSrc();
-    for (var ind = 0; ind < bottuns.length; ind++){
-        bottuns[ind].style.display = 'none';
-    }
+    switchBoards(buttonsBox, board); 
+    setTimeout(function(){
+        board.style.display = 'flex';
+        board.style.transitionProperty = 'opacity';
+        board.style.transitionDelay = '2100ms';
+        board.style.transitionDuration = '1000ms';
+        board.style.opacity = '1';
+    }, 1100);
+}
+
+function switchBoards(el1, el2) {
+    el1.style.transitionProperty = 'opacity';
+    el1.style.transitionDelay = '100ms';
+    el1.style.transitionDuration = '1000ms';
+    el1.style.opacity = '0';
+    
+    /*
+    el2.transitionProperty = 'opacity';
+    el2.style.transitionDelay = '5000ms';
+    el2.style.transitionDuration = '1000ms';
+    el2.style.opacity = '1';
+*/
+
+    setTimeout(function(){
+        el1.style.display = 'none';
+        /*el2.style.display = 'flex';
+        el2.style.transitionProperty = 'opacity';
+        el2.style.transitionDelay = '2100ms';
+        el2.style.transitionDuration = '1000ms';
+        el2.style.opacity = '1';*/
+    }, 1000);
 }
 
 // flip back a pair of cards
@@ -110,7 +141,6 @@ function win(){
 // reset the game
 function reset(){
     var cards = document.getElementsByClassName('scene');
-    var board = document.getElementById('board');
     for (var ind = cards.length - 1; ind > 0; ind--){
         board.removeChild(cards[ind]);
     }
@@ -142,61 +172,68 @@ function checkPair() {
     }
 }
 
-function vovaImages() {
-    imgArray[0] = 'images/Vova/img1.jpg'
-    imgArray[1] = 'images/Vova/img2.jpg';
-    imgArray[2] = 'images/Vova/img3.jpg';
-    imgArray[3] = 'images/Vova/img4.jpg';
-    imgArray[4] = 'images/Vova/img5.jpg';
-    imgArray[5] = 'images/Vova/img6.jpg';
-    imgArray[6] = 'images/Vova/img7.jpg';
-    imgArray[7] = 'images/Vova/img8.jpg';
-    imgArray[8] = 'images/Vova/img9.jpg';
-    imgArray[9] = 'images/Vova/img10.jpg';
-    imgArray[10] = 'images/Vova/img11.jpg';
-    imgArray[11] = 'images/Vova/img12.jpg';
-    imgArray[12] = 'images/Vova/img13.jpg';
-    imgArray[13] = 'images/Vova/img14.jpg';
-    imgArray[14] = 'images/Vova/img15.jpg';
-    imgArray[15] = 'images/Vova/img16.jpg';
-    imgArray[16] = 'images/Vova/img17.png';
+function animalImages() {
+    imgArray[0] = 'images/animal/png/001-cat.png'
+    imgArray[1] = 'images/animal/png/002-horse.png';
+    imgArray[2] = 'images/animal/png/003-gorilla.png';
+    imgArray[3] = 'images/animal/png/004-snake.png';
+    imgArray[4] = 'images/animal/png/005-toucan.png';
+    imgArray[5] = 'images/animal/png/006-jaguar.png';
+    imgArray[6] = 'images/animal/png/007-frog.png';
+    imgArray[7] = 'images/animal/png/008-lion.png';
+    imgArray[8] = 'images/animal/png/009-antilope.png';
+    imgArray[9] = 'images/animal/png/010-elephant.png';
+    imgArray[10] = 'images/animal/png/011-giraffe.png';
+    imgArray[11] = 'images/animal/png/012-dog.png';
+    imgArray[12] = 'images/animal/png/013-zebra.png';
+    imgArray[13] = 'images/animal/png/014-koala.png';
+    imgArray[14] = 'images/animal/png/015-coyote.png';
+    imgArray[15] = 'images/animal/png/016-ostrich.png';
+    imgArray[16] = 'images/animal/png/017-duck.png';
+    imgArray[17] = 'images/animal/png/018-tasmanian devil.png';
+    imgArray[18] = 'images/animal/png/019-shark.png';
+    imgArray[19] = 'images/animal/png/020-fish.png';
+    imgArray[20] = 'images/animal/png/021-octopus.png';
+    imgArray[21] = 'images/animal/png/022-sea star.png';
+    imgArray[22] = 'images/animal/png/023-goldfish.png';
+    imgArray[23] = 'images/animal/png/024-medusa.png';
+    imgArray[24] = 'images/animal/png/025-crocodile.png';
+    imgArray[25] = 'images/animal/png/026-turtle.png';
+    imgArray[26] = 'images/animal/png/027-snake.png';
+    imgArray[27] = 'images/animal/png/028-lizard.png';
+    imgArray[28] = 'images/animal/png/028-lizard.png';
+    imgArray[29] = 'images/animal/png/030-bug.png';
+    imgArray[30] = 'images/animal/png/031-bee.png';
+    imgArray[31] = 'images/animal/png/032-butterfly.png';
+    imgArray[32] = 'images/animal/png/033-ant.png';
+    imgArray[33] = 'images/animal/png/034-parrot.png';
+    imgArray[34] = 'images/animal/png/035-caterpillar.png';
+    imgArray[35] = 'images/animal/png/036-spider.png';
+    imgArray[36] = 'images/animal/png/037-stingray.png';
+    imgArray[37] = 'images/animal/png/038-scorpion.png';
+    imgArray[38] = 'images/animal/png/039-lobster.png';
+    imgArray[39] = 'images/animal/png/040-crab.png';
+    imgArray[40] = 'images/animal/png/041-reindeer.png';
+    imgArray[41] = 'images/animal/png/042-bear.png';
+    imgArray[42] = 'images/animal/png/043-wolf.png';
+    imgArray[43] = 'images/animal/png/044-owl.png';
+    imgArray[44] = 'images/animal/png/045-rabbit.png';
+    imgArray[45] = 'images/animal/png/046-bunny.png';
+    imgArray[46] = 'images/animal/png/047-cow.png';
+    imgArray[47] = 'images/animal/png/048-pig.png';
+    imgArray[48] = 'images/animal/png/049-rooster.png';
+    imgArray[49] = 'images/animal/png/050-sheep.png';
 }
 
-function ianImages() {
-    imgArray[0] = 'images/Ian/img1.jpg';
-    imgArray[1] = 'images/Ian/img2.jpg';
-    imgArray[2] = 'images/Ian/img3.jpg';
-    imgArray[3] = 'images/Ian/img4.jpg';
-    imgArray[4] = 'images/Ian/img5.jpg';
-    imgArray[5] = 'images/Ian/img6.jpg';
-    imgArray[6] = 'images/Ian/img7.jpg';
-    imgArray[7] = 'images/Ian/img8.jpg';
-    imgArray[8] = 'images/Ian/img9.jpg';
-    imgArray[9] = 'images/Ian/img10.jpg';
-    imgArray[10] = 'images/Ian/img11.jpg';
-    imgArray[11] = 'images/Ian/img12.jpg';
-    imgArray[12] = 'images/Ian/img13.jpg';
-    imgArray[13] = 'images/Ian/img14.jpg';
-    imgArray[14] = 'images/Ian/img15.jpg';
-    imgArray[15] = 'images/Ian/img16.jpg';
-    imgArray[16] = 'images/Ian/img17.jpg';
-    imgArray[17] = 'images/Ian/img18.jpg';
-    imgArray[18] = 'images/Ian/img19.jpg';
-    imgArray[19] = 'images/Ian/img20.jpg';
-    imgArray[20] = 'images/Ian/img21.jpg';
-    imgArray[21] = 'images/Ian/img22.jpg';
-    imgArray[22] = 'images/Ian/img23.jpg';
-    imgArray[23] = 'images/Ian/img24.jpg';
-}
 
 //theFormSubmit.addEventListener('click', submitAndStart);
 var imgArray = [];
 
-document.getElementById('board').style.display = 'none';
+var board = document.getElementById('board');
+board.style.opacity = '0';
+board.style.display = 'none';
 
-var bottuns = document.getElementsByTagName('button');
-for (var ind = 0; ind < bottuns.length; ind++){
-    bottuns[ind].addEventListener( 'click', setupBoard);
+var buttons = document.getElementsByTagName('button');
+for (var ind = 0; ind < buttons.length; ind++){
+    buttons[ind].addEventListener( 'click', setupBoard);
 }
-
-//setupBoard();
