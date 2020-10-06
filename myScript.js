@@ -40,7 +40,7 @@ function shuffleArray(array) {
 }
 
 // create new img array of the images that we will use
-var newImgArray = []
+var newImgArray = [];
 
 // copy from the old array and double
 function copyAndDouble() {
@@ -66,7 +66,7 @@ function setupBoard(eventEl) {
     }
     else {
        // ianImages();
-
+       animalImages();
     }
     setup();
 }
@@ -75,7 +75,6 @@ function setup() {
     var buttonsBox = document.getElementById('buttonsBox');
     var board = document.getElementById('board');
 
-    //buttonsBox.style.display = 'none';
     cardsOnBoard = numberOfCards;
     createCards();
     listenAndFlip();
@@ -99,20 +98,8 @@ function switchBoards(el1, el2) {
     el1.style.transitionDuration = '1000ms';
     el1.style.opacity = '0';
     
-    /*
-    el2.transitionProperty = 'opacity';
-    el2.style.transitionDelay = '5000ms';
-    el2.style.transitionDuration = '1000ms';
-    el2.style.opacity = '1';
-*/
-
-    setTimeout(function(){
+  setTimeout(function(){
         el1.style.display = 'none';
-        /*el2.style.display = 'flex';
-        el2.style.transitionProperty = 'opacity';
-        el2.style.transitionDelay = '2100ms';
-        el2.style.transitionDuration = '1000ms';
-        el2.style.opacity = '1';*/
     }, 1000);
 }
 

@@ -115,10 +115,6 @@ button:hover {
     transition-duration: 1s;
 }
 
-#footer a {
-    color: white;
-}
-
-#footer a:active {
+#footer a:link, #footer a:visited, #footer a:hover, #footer a:active {
     color: white;
 }
